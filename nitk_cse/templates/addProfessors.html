@@ -1,0 +1,88 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div>
+    <form action="" method="POST"  enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>Add Professors</legend>
+            {{ form.name.label(class="form-control-label")}}
+
+            {% if form.name.errors %}
+        
+                        {{ form.name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+        
+                        </div>
+            {% else %}
+        
+                        {{ form.name(class="form-control form-control-lg is-valid") }}
+        
+            {% endif %}
+            <br>
+            <div>
+                {% for subfield in form.post %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td><br>
+                </tr>
+                {% endfor %}
+            </div><br>
+            <div class="form-group">
+                {{ form.picture.label() }} <small>Ideal size (256 x 256) pixel [.jpg, .png exts.]</small>
+                {{ form.picture(class="form-control-file") }}
+                {% if form.picture.errors %}
+                    {% for error in form.picture.errors %}
+                    err
+                        <span class="text-danger"> {{ error }} </span> <br>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <br>
+            {{ form.submit(class="btn btn-outline-info")}}
+        </fieldset>
+    </form>
+</div>
+
+<div>
+    <b>All Professors - </b><br>
+    Head of Department<br>
+        {% for h in hod %}
+                <img src="{{ url_for('static', filename='prof_img/' + h.image_file) }}" style="width: 64px; height: 64px;">
+                {{ h.name }}  <br>
+        {% endfor %}
+    </div>
+    
+    <br>
+    Professors<br>
+    {% for h in prof %}
+    <img src="{{ url_for('static', filename='prof_img/' + h.image_file) }}" style="width: 64px; height: 64px;">
+        {{ h.name }} <br>
+        
+    {% endfor %}
+    <br>
+    Assistant Professors<br>
+    {% for h in assi %}
+    <img src="{{ url_for('static', filename='prof_img/' + h.image_file) }}" style="width: 64px; height: 64px;">
+        {{ h.name }} <br>
+        
+    {% endfor %}
+    <br>
+    Associate Professors<br>
+    {% for h in asso %}
+    <img src="{{ url_for('static', filename='prof_img/' + h.image_file) }}" style="width: 64px; height: 64px;">
+        {{ h.name }} <br>
+        
+    {% endfor %}
+    <br>
+</div>

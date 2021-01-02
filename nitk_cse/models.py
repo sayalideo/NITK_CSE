@@ -41,3 +41,11 @@ class ResearchConf(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), unique=True, nullable=False)
     area_id = db.Column(db.Integer, db.ForeignKey('research.id'), nullable=False)
+
+class Professor(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(200), unique=True, nullable=False)
+    title = db.Column(db.String(200), nullable=False)
+    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
+    def __repr__(self):
+        return f"Professor('{self.name}')"

@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import TextAreaField, TextField, SubmitField, StringField, PasswordField
+from wtforms import TextAreaField, TextField, SubmitField, StringField, PasswordField, RadioField
+from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms.validators import DataRequired, Length, Email
 
 class NewsForm(FlaskForm):
@@ -27,4 +28,10 @@ class ConferenceForm(FlaskForm):
 
 class FacultyForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired(), Length(min=2, max=200)])
+    submit = SubmitField('Add Faculty')
+
+class ProfessorForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired(), Length(min=2, max=200)])
+    post = RadioField('Post', validators=[DataRequired()], choices=[('Professor','Professor'),('Head of Department','Head of Department'),('Associate Professor','Associate Professor'),('Assistant Professor','Assistant Professor')])
+    picture = FileField('Upload Picture', validators=[FileAllowed(['jpg', 'png', 'jpeg'], FileRequired())])
     submit = SubmitField('Add Faculty')
