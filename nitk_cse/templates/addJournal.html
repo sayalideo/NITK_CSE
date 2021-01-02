@@ -1,0 +1,26 @@
+<div>
+    <form action="" method="POST">
+        {{ jf.hidden_tag() }}
+        <fieldset>
+            <legend>Add Journal</legend>
+            {{ jf.name.label(class="form-control-label")}}
+
+            {% if jf.name.errors %}
+        
+                        {{ jf.name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in jf.name.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+        
+                        </div>
+            {% else %}
+        
+                        {{ jf.name(class="form-control form-control-lg is-valid") }}
+        
+            {% endif %}
+            <br>
+            {{ jf.submit(class="btn btn-outline-info")}}
+        </fieldset>
+    </form>
+</div>

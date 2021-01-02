@@ -1,0 +1,43 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div>
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>Add Research Area</legend>
+            {{ form.title.label(class="form-control-label")}}
+
+            {% if form.title.errors %}
+        
+                        {{ form.title(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.title.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+        
+                        </div>
+            {% else %}
+        
+                        {{ form.title(class="form-control form-control-lg is-valid") }}
+        
+            {% endif %}
+            <br>
+            {{ form.submit(class="btn btn-outline-info")}}
+        </fieldset>
+    </form>
+</div>
+
+<div>
+    The active areas of research in the department are: <br>
+    {% for area in areas %}   
+        <a href="/edit_area/{{ area.id }}">{{ area.title }}</a><br>
+    {% endfor %}
+</div>

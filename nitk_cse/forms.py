@@ -12,3 +12,19 @@ class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Login')
+
+class ResearchAreaForm(FlaskForm):
+    title = StringField('Subject', validators=[DataRequired(), Length(min=2, max=200)])
+    submit = SubmitField('Add Research Area')
+
+class JournalForm(FlaskForm):
+    name = TextAreaField('Enter Details', validators=[DataRequired(), Length(min=2, max=200)])
+    submit = SubmitField('Add Journal')
+
+class ConferenceForm(FlaskForm):
+    name = TextAreaField('Enter Details', validators=[DataRequired(), Length(min=2, max=200)])
+    submit = SubmitField('Add Conference')
+
+class FacultyForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired(), Length(min=2, max=200)])
+    submit = SubmitField('Add Faculty')

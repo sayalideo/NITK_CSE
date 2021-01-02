@@ -1,0 +1,26 @@
+<div>
+    <form action="" method="POST">
+        {{ ff.hidden_tag() }}
+        <fieldset>
+            <legend>Add Faculty</legend>
+            {{ ff.name.label(class="form-control-label")}}
+
+            {% if ff.name.errors %}
+        
+                        {{ ff.name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in ff.name.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+        
+                        </div>
+            {% else %}
+        
+                        {{ ff.name(class="form-control form-control-lg is-valid") }}
+        
+            {% endif %}
+            <br>
+            {{ ff.submit(class="btn btn-outline-info")}}
+        </fieldset>
+    </form>
+</div>

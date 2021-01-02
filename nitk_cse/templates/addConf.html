@@ -1,0 +1,26 @@
+<div>
+    <form action="" method="POST">
+        {{ cf.hidden_tag() }}
+        <fieldset>
+            <legend>Add Conference</legend>
+            {{ cf.name.label(class="form-control-label")}}
+
+            {% if cf.name.errors %}
+        
+                        {{ cf.name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in cf.name.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+        
+                        </div>
+            {% else %}
+        
+                        {{ cf.name(class="form-control form-control-lg is-valid") }}
+        
+            {% endif %}
+            <br>
+            {{ cf.submit(class="btn btn-outline-info")}}
+        </fieldset>
+    </form>
+</div>
