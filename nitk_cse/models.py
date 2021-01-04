@@ -77,3 +77,12 @@ class ISSY(db.Model):
 class RDProjects(db.Model):    
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), unique=True, nullable=False)
+
+class Consultancy(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), unique=True, nullable=False)
+    guide = db.Column(db.String(100), nullable=False)
+    agency = db.Column(db.String(100), nullable=False)
+    student = db.Column(db.String(100), nullable=False)
+    status = db.Column(db.String(100), nullable=False)
+    year = db.Column(db.String(10), nullable=False)

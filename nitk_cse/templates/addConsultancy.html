@@ -1,0 +1,132 @@
+<div>
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>Add Consultancy</legend>
+            {{ form.title.label(class="form-control-label")}}
+
+            {% if form.title.errors %}
+        
+                        {{ form.title(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.title.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+        
+                        </div>
+            {% else %}
+        
+                        {{ form.title(class="form-control form-control-lg is-valid") }}
+        
+            {% endif %} <br>
+            {{ form.guide.label(class="form-control-label")}}
+
+            {% if form.guide.errors %}
+        
+                        {{ form.guide(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.guide.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+        
+                        </div>
+            {% else %}
+        
+                        {{ form.guide(class="form-control form-control-lg is-valid") }}
+        
+            {% endif %} <br>
+            {{ form.agency.label(class="form-control-label")}}
+
+            {% if form.agency.errors %}
+        
+                        {{ form.agency(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.agency.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+        
+                        </div>
+            {% else %}
+        
+                        {{ form.agency(class="form-control form-control-lg is-valid") }}
+        
+            {% endif %} <br>
+            {{ form.student.label(class="form-control-label")}}
+
+            {% if form.student.errors %}
+        
+                        {{ form.student(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.student.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+        
+                        </div>
+            {% else %}
+        
+                        {{ form.student(class="form-control form-control-lg is-valid") }}
+        
+            {% endif %} <br>
+            {{ form.status.label(class="form-control-label")}}
+
+            {% if form.status.errors %}
+        
+                        {{ form.status(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.status.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+        
+                        </div>
+            {% else %}
+        
+                        {{ form.status(class="form-control form-control-lg is-valid") }}
+        
+            {% endif %}
+            <br>
+            {{ form.year.label(class="form-control-label")}}
+
+            {% if form.year.errors %}
+        
+                        {{ form.year(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.year.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+        
+                        </div>
+            {% else %}
+        
+                        {{ form.year(class="form-control form-control-lg is-valid") }}
+        
+            {% endif %} <br>
+            {{ form.submit(class="btn btn-outline-info")}}
+        </fieldset>
+    </form>
+</div>
+<div>
+    All Consultancies <br>
+    <table>
+        <tr>
+            <th>Sr. No.</th>
+            <th>Title of Consultancy</th>
+            <th>Name of the Guide/ Investigator</th>
+            <th>Funding Agency </th>
+            <th>Name of the Student involved</th>
+            <th>Status/ Amt.</th>
+            <th>Year</th>
+        </tr>
+        {% for pr in p%}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ pr.title }}</td>
+                <td>{{ pr.guide }}</td>
+                <td>{{ pr.agency }}</td>
+                <td>{{ pr.student }}</td>
+                <td>{{ pr.status }}</td>
+                <td>{{ pr.year }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+</div>

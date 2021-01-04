@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import TextAreaField, TextField, SubmitField, StringField, PasswordField, RadioField
+from wtforms import TextAreaField, TextField, SubmitField, StringField, PasswordField, RadioField, IntegerField
 from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms.validators import DataRequired, Length, Email
 
@@ -55,3 +55,12 @@ class ISSYForm(FlaskForm):
 class RDForm(FlaskForm):
     name = TextAreaField('Enter Project Details', validators=[DataRequired(), Length(min=2, max=200)])
     submit = SubmitField('Add Project')
+
+class ConsultancyForm(FlaskForm):
+    title = TextField('Add Title of Consultancy', validators=[Length(max=100)])
+    guide = TextField('Add Name of the Guide/ Investigator', validators=[Length(max=100)])
+    agency = TextField('Add Funding Agency ', validators=[Length(max=100)])
+    student = TextField('Add Name of the Student Involved', validators=[Length(max=100)])
+    status = TextField('Status/ Amt.', validators=[Length(max=100)])
+    year = IntegerField('Year')
+    submit = SubmitField('Add Consultancy')

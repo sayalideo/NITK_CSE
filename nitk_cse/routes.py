@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for
-from nitk_cse.models import User, News, Research, ResearchJournal, ResearchConf, ResearchFaculty, Professor, CSFY, CSSY, ISFY, ISSY, RDProjects
-from nitk_cse.forms import LoginForm, NewsForm, ResearchAreaForm, JournalForm, ConferenceForm, FacultyForm, ProfessorForm, CSFYForm, CSSYForm, ISFYForm, ISSYForm, RDForm
+from nitk_cse.models import User, News, Research, ResearchJournal, ResearchConf, ResearchFaculty, Professor, CSFY, CSSY, ISFY, ISSY, RDProjects, Consultancy
+from nitk_cse.forms import LoginForm, NewsForm, ResearchAreaForm, JournalForm, ConferenceForm, FacultyForm, ProfessorForm, CSFYForm, CSSYForm, ISFYForm, ISSYForm, RDForm, ConsultancyForm
 from nitk_cse import app, db
 
 import os
@@ -218,3 +218,14 @@ def add_rdproject():
         db.session.commit()
         return redirect(url_for('add_rdproject'))
     return render_template('addRDProject.html',form=form,p=p)
+
+@app.route('/add_consultancy',methods=['GET','POST'])
+def add_consultancy():
+    form = ConsultancyForm()
+    p = Consultancy.query.all()
+    if form.validate_on_submit():
+        r = Consultancy(title=form.title.data,guide=form.guide.data,agency=form.agency.data,student=form.student.data,status=form.status.data,year=form.year.data)
+        db.session.add(r)
+        db.session.commit()
+        return redirect(url_for('add_consultancy'))
+    return render_template('addConsultancy.html',form=form,p=p)
