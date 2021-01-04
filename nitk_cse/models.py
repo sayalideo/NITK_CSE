@@ -76,4 +76,4 @@ class ISSY(db.Model):
     
 class RDProjects(db.Model):    
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(200), unique=True, nullable=False)
+    name = db.Column(db.String(200), unique=True, nullable=False)

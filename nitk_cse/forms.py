@@ -51,3 +51,7 @@ class CSSYForm(FlaskForm):
 class ISSYForm(FlaskForm):
     picture = FileField('Upload File', validators=[FileAllowed(['jpg', 'png', 'jpeg'], FileRequired())])
     submit = SubmitField('Add List')
+
+class RDForm(FlaskForm):
+    name = TextAreaField('Enter Project Details', validators=[DataRequired(), Length(min=2, max=200)])
+    submit = SubmitField('Add Project')

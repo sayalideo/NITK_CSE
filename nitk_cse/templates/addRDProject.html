@@ -1,0 +1,33 @@
+<div>
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>Add Research and Development Project</legend>
+            {{ form.name.label(class="form-control-label")}}
+
+            {% if form.name.errors %}
+        
+                        {{ form.name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                                <span> {{ error }} </span>
+                            {% endfor %}
+        
+                        </div>
+            {% else %}
+        
+                        {{ form.name(class="form-control form-control-lg is-valid") }}
+        
+            {% endif %}
+            <br>
+            {{ form.submit(class="btn btn-outline-info")}}
+        </fieldset>
+    </form>
+</div>
+<div>
+    All Research and Development Projects <br>
+    
+    {% for pr in p%}
+        {{loop.index }} {{ pr.name }}<br>
+    {% endfor %}
+</div>
