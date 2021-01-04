@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for
-from nitk_cse.models import User, News, Research, ResearchJournal, ResearchConf, ResearchFaculty, Professor
-from nitk_cse.forms import LoginForm, NewsForm, ResearchAreaForm, JournalForm, ConferenceForm, FacultyForm, ProfessorForm
+from nitk_cse.models import User, News, Research, ResearchJournal, ResearchConf, ResearchFaculty, Professor, CSFY, CSSY, ISFY, ISSY
+from nitk_cse.forms import LoginForm, NewsForm, ResearchAreaForm, JournalForm, ConferenceForm, FacultyForm, ProfessorForm, CSFYForm, CSSYForm, ISFYForm, ISSYForm
 from nitk_cse import app, db
 
 import os
@@ -10,8 +10,8 @@ from flask import current_app
 
 @app.route("/")
 def hello():
-    return 'hi'
-    #return render_template('home.html')
+    
+    return render_template('home.html')
 
 @app.route("/login",methods=['GET','POST'])
 def login():
@@ -118,15 +118,92 @@ def add_professors():
     assi = Professor.query.filter_by(title='Assistant Professor')
     asso = Professor.query.filter_by(title='Associate Professor')
     if form.validate_on_submit():
-        print('here ',form.picture.data)
         if form.picture.data :
-            print('here ',form.picture.data)
             picture_file = save_img(form.picture.data)
         else:
             picture_file = 'icon.png'
-        print('pic file ',picture_file)
         prof = Professor(name=form.name.data, title=form.post.data, image_file=picture_file)
         db.session.add(prof)
         db.session.commit()
         return redirect(url_for('add_professors'))
     return render_template('addProfessors.html',form=form, hod=hod, prof=prof, assi=assi, asso=asso)
+
+@app.route('/add_students',methods=['GET'])
+def add_students():
+    return render_template('addStudents.html')
+
+def save_list(form_picture):
+    random_hex   = secrets.token_hex(8)
+    _, f_ext     = os.path.splitext(form_picture.filename)
+    picture_fn   = random_hex + f_ext
+    picture_path = os.path.join(current_app.root_path, 'static/stud_list', picture_fn)
+    output_size  = (720,512)
+    i            = Image.open(form_picture)
+    i.thumbnail(output_size)
+    i.save(picture_path)
+
+    return picture_fn
+
+@app.route('/add_csfy',methods=['GET','POST'])
+def add_csfy():
+    form = CSFYForm()
+    p = CSFY.query.first()
+    if form.validate_on_submit():
+        if form.picture.data :
+            picture_file = save_list(form.picture.data)
+            if p:
+                db.session.delete(p)
+                db.session.commit()
+            f = CSFY(csfy_file=picture_file)
+            db.session.add(f)
+            db.session.commit()
+            return redirect(url_for('add_csfy'))
+    return render_template('addCSFY.html',p=p,form=form)
+
+@app.route('/add_cssy',methods=['GET','POST'])
+def add_cssy():
+    form = CSSYForm()
+    p = CSSY.query.first()
+    if form.validate_on_submit():
+        if form.picture.data :
+            picture_file = save_list(form.picture.data)
+            if p:
+                db.session.delete(p)
+                db.session.commit()
+            f = CSSY(cssy_file=picture_file)
+            db.session.add(f)
+            db.session.commit()
+            return redirect(url_for('add_cssy'))
+    return render_template('addCSSY.html',p=p,form=form)
+
+@app.route('/add_isfy',methods=['GET','POST'])
+def add_isfy():
+    form = ISFYForm()
+    p = ISFY.query.first()
+    if form.validate_on_submit():
+        if form.picture.data :
+            picture_file = save_list(form.picture.data)
+            if p:
+                db.session.delete(p)
+                db.session.commit()
+            f = ISFY(isfy_file=picture_file)
+            db.session.add(f)
+            db.session.commit()
+            return redirect(url_for('add_isfy'))
+    return render_template('addISFY.html',p=p,form=form)
+
+@app.route('/add_issy',methods=['GET','POST'])
+def add_issy():
+    form = ISSYForm()
+    p = ISSY.query.first()
+    if form.validate_on_submit():
+        if form.picture.data :
+            picture_file = save_list(form.picture.data)
+            if p:
+                db.session.delete(p)
+                db.session.commit()
+            f = ISSY(issy_file=picture_file)
+            db.session.add(f)
+            db.session.commit()
+            return redirect(url_for('add_issy'))
+    return render_template('addISSY.html',p=p,form=form)

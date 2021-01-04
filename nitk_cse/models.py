@@ -49,3 +49,31 @@ class Professor(db.Model):
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     def __repr__(self):
         return f"Professor('{self.name}')"
+
+class CSFY(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    csfy_file = db.Column(db.String(20), nullable=False)
+    def __repr__(self):
+        return f"CSFY('{self.csfy_file}')"
+
+class CSSY(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    cssy_file = db.Column(db.String(20), nullable=False)
+    def __repr__(self):
+        return f"CSSY('{self.cssy_file}')"
+
+class ISFY(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    isfy_file = db.Column(db.String(20), nullable=False)
+    def __repr__(self):
+        return f"ISFY('{self.isfy_file}')"
+
+class ISSY(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    issy_file = db.Column(db.String(20), nullable=False)
+    def __repr__(self):
+        return f"ISSY('{self.issy_file}')"
+    
+class RDProjects(db.Model):    
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(200), unique=True, nullable=False)

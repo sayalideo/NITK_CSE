@@ -35,3 +35,19 @@ class ProfessorForm(FlaskForm):
     post = RadioField('Post', validators=[DataRequired()], choices=[('Professor','Professor'),('Head of Department','Head of Department'),('Associate Professor','Associate Professor'),('Assistant Professor','Assistant Professor')])
     picture = FileField('Upload Picture', validators=[FileAllowed(['jpg', 'png', 'jpeg'], FileRequired())])
     submit = SubmitField('Add Faculty')
+
+class CSFYForm(FlaskForm):
+    picture = FileField('Upload File', validators=[FileAllowed(['jpg', 'png', 'jpeg'], FileRequired())])
+    submit = SubmitField('Add List')
+
+class ISFYForm(FlaskForm):
+    picture = FileField('Upload File', validators=[FileAllowed(['jpg', 'png', 'jpeg'], FileRequired())])
+    submit = SubmitField('Add List')
+
+class CSSYForm(FlaskForm):
+    picture = FileField('Upload File', validators=[FileAllowed(['jpg', 'png', 'jpeg'], FileRequired())])
+    submit = SubmitField('Add List')
+
+class ISSYForm(FlaskForm):
+    picture = FileField('Upload File', validators=[FileAllowed(['jpg', 'png', 'jpeg'], FileRequired())])
+    submit = SubmitField('Add List')

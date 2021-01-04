@@ -1,0 +1,24 @@
+<div>
+    <form action="" method="POST"  enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>Add M.Tech IS First Year List</legend>
+            
+            <div class="form-group">
+                {{ form.picture.label() }} <small>Ideal size (720 x 512) pixel [.jpg, .png exts.]</small>
+                {{ form.picture(class="form-control-file") }}
+                {% if form.picture.errors %}
+                    {% for error in form.picture.errors %}
+                    err
+                        <span class="text-danger"> {{ error }} </span> <br>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <br>
+            {{ form.submit(class="btn btn-outline-info")}}
+        </fieldset>
+    </form>
+</div>
+{% if p %}
+<img src="{{ url_for('static', filename='stud_list/' + p.isfy_file) }}" style="width: 512px; height: 720px;" alt="">
+{% endif %}
