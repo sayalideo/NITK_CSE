@@ -95,3 +95,86 @@ header .container .bottom nav a{
 header .container .bottom nav a:hover{
     color: #7FFFD4;
 }
+.main-content{
+    background: #ffffff;
+    height: 300px;
+}
+.footer{
+    background: #303036;
+    color: #ffffff;
+    height: 490px;
+}
+.footer .footer-top{
+    display: flex;
+    padding: 2rem 0;
+    margin-left: 20%;
+    margin-bottom: 3rem;
+}
+.footer .footer-top .contact{
+    margin-right: 10rem;
+    color: #ffffff;
+}
+.footer .footer-top h4{
+    margin-bottom: 0.5rem;
+}
+.footer .footer-top .connect p{
+    margin-bottom: 1rem;
+}
+.footer .footer-top .contact p span{
+    color: #7FFFD4;
+}
+.footer .footer-top .connect .icon{
+    font-size: 2rem;
+    color: #ffffff;
+    margin-left: 1rem;
+}
+.footer .footer-top .connect .icon:hover{
+    color: #7FFFD4;
+}
+.footer .footer-top .contact p span a{
+    color: #7FFFD4;
+    text-decoration: none;
+}
+.footer .footer-bottom{
+    display: flex;
+    padding: 1rem 0;
+    margin-left: 3.5%;
+}
+.footer .footer-bottom .footer-section{
+    margin-right: 2rem;
+}
+.footer .footer-bottom ul{
+    list-style: none;
+}
+.footer .footer-bottom h4{
+    margin-bottom: 1rem;
+    color: #7FFFD4;
+}
+.footer .footer-bottom .quick ul li{
+    margin-left: -30%;
+} 
+.footer .footer-bottom .general ul li{
+    margin-left: -23%;
+} 
+.footer .footer-bottom .doctoral ul li{
+    margin-left: -35%;
+}
+.footer .footer-bottom .postgraduate ul li{
+    margin-left: -35%;
+}
+.footer .footer-bottom .undergraduate ul li{
+    margin-left: -33%;
+}
+.footer .footer-bottom .opening ul li{
+    margin-left: -20%;
+}
+.footer .footer-bottom ul li{
+    margin-bottom: 0.5rem;
+}  
+.footer .footer-bottom ul li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.footer .footer-bottom ul li a:hover{
+    color: #7FFFD4;
+}
