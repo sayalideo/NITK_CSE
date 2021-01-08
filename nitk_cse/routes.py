@@ -10,7 +10,6 @@ from flask import current_app
 
 @app.route("/")
 def hello():
-    
     return render_template('home.html')
 
 @app.route("/login",methods=['GET','POST'])
