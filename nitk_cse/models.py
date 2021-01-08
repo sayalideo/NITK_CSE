@@ -25,7 +25,7 @@ class Research(db.Model):
     conferences = db.relationship('ResearchConf', backref='research_area', lazy=True)
 
     def __repr__(self):
-        return f"News('{self.title}')"
+        return f"Research('{self.title}')"
 
 class ResearchFaculty(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -30,13 +30,13 @@
             </div>
             <div class="middle">
               <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Programmes<i class="fas fa-angle-down"></i></a>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a>
                     <div class="menu-bar-1">
                         <ul>
-                            <li><a href="#">Undergraduate</a></li>
-                            <li><a href="#">Postgraduate</a></li>
-                            <li><a href="#">Doctoral</a></li>
+                            <li><a href="{{ url_for('programmes') }}">Undergraduate</a></li>
+                            <li><a href="{{ url_for('postgrad') }}">Postgraduate</a></li>
+                            <li><a href="{{ url_for('doctaral') }}">Doctoral</a></li>
                         </ul>
                     </div>
                 </li>
@@ -110,6 +110,8 @@
             </div>
         </div>
     </header>
+    {% block content %}{% endblock %}
+
 
     <div class="main-content">
     </div>

@@ -1,1 +1,24 @@
 {% extends "layout.html" %}
+{% block content %}
+hi
+
+<p>The Department of Computer Science & Engineering was established in the year 1986. 
+    Since  then, the department has held a position of pride in NITK. It has consistently 
+    fulfilled its role of producing Computer Engineers ready to meet the demands of the IT world.
+     The department has always attracted the best of engineering aspirants from all over the country. 
+     It has a well qualified and experienced team of faculty. The Department offers B.Tech., M.Tech., 
+     M.Tech.(By Research) and Ph.D. courses in Computer Science and Engineering. The department has 
+     adequate facilities to support these teaching activities. Students of the department have access to
+      sufficient high end computing facilities. The Department is also actively involved in various 
+      research activities. The facilities are adequate to cater to the needs of Research activities. 
+      The department has signed MoU with IBM, Intel, Leeds Metropolitan University and others, 
+      for academic collaborative projects.</p>
+<br>
+
+{% for new in news %}
+
+    <a href="{{ new.link }}">{{ new.link_text }}</a>
+    <p>{{ new.news }}</p> <br>
+{% endfor %}
+
+{% endblock content %}

@@ -9,8 +9,32 @@ from PIL import Image
 from flask import current_app
 
 @app.route("/")
-def hello():
-    return render_template('home.html')
+def home():
+    news = News.query.all()
+    return render_template('home.html',news=news)
+
+@app.route("/programmes")
+@app.route("/programmes/undergrad")
+def programmes():
+    return render_template('programmes.html')
+
+@app.route("/programmes/postgrad")
+def postgrad():
+    return render_template('postgrad.html')
+
+@app.route("/programmes/doctaral")
+def doctaral():
+    topics = Research.query.all()
+    return render_template('doctaral.html',topics=topics)
+
+@app.route("/programmes/doctaral/<id>")
+def subject(id):
+    subject = Research.query.filter_by(id=id)[0].title
+    faculty = ResearchFaculty.query.filter_by(area_id=id)
+    journal = ResearchJournal.query.filter_by(area_id=id)
+    conf = ResearchConf.query.filter_by(area_id=id)
+    return render_template('subject.html',subject=subject, faculty=faculty,journal=journal,conf=conf)
+
 
 @app.route("/login",methods=['GET','POST'])
 def login():
