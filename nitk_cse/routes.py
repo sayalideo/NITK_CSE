@@ -35,6 +35,37 @@ def subject(id):
     conf = ResearchConf.query.filter_by(area_id=id)
     return render_template('subject.html',subject=subject, faculty=faculty,journal=journal,conf=conf)
 
+@app.route("/faculty")
+def faculty():
+    profs = Professor.query.filter_by(title="Professor")
+    hod = Professor.query.filter_by(title="Head of Department")
+    asso = Professor.query.filter_by(title="Associate Professor")
+    assi = Professor.query.filter_by(title="Assistant Professor")
+    return render_template('faculty.html',profs=profs,hod=hod,asso=asso,assi=assi)
+
+@app.route("/student")
+def student():
+    return render_template('student.html')
+
+@app.route('/csfy')
+def csfy():
+    img = CSFY.query.first().csfy_file
+    return render_template('csfy.html',img=img)
+
+@app.route('/cssy')
+def cssy():
+    img = CSSY.query.first().cssy_file
+    return render_template('cssy.html',img=img)
+
+@app.route('/isfy')
+def isfy():
+    img = ISFY.query.first().isfy_file
+    return render_template('isfy.html',img=img)
+
+@app.route('/issy')
+def issy():
+    img = ISSY.query.first().issy_file
+    return render_template('issy.html',img=img)
 
 @app.route("/login",methods=['GET','POST'])
 def login():

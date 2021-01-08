@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h3>Professors</h3><br>
+<table>
+    <tr>
+        {% for h in profs %}
+        <td>
+            <img src="{{ url_for('static', filename='prof_img/' + h.image_file) }}" style="width: 64px; height: 64px;"><br>
+            {{ h.name }}
+        </td>
+        {% endfor %}
+    </tr>
+</table>
+<br><br>
+<h3>Head of the Department </h3><br>
+<table>
+    <tr>
+        {% for h in hod %}
+        <td>
+            <img src="{{ url_for('static', filename='prof_img/' + h.image_file) }}" style="width: 64px; height: 64px;"><br>
+            {{ h.name }}
+        </td>
+        {% endfor %}
+    </tr>
+</table>
+<br><br>
+<h3>Associate Professors </h3><br>
+<table>
+    <tr>
+        {% for h in hod %}
+        <td>
+            <img src="{{ url_for('static', filename='prof_img/' + h.image_file) }}" style="width: 64px; height: 64px;"><br>
+            {{ h.name }}
+        </td>
+        {% endfor %}
+    </tr>
+</table>
+<br><br>
+<h3>Assistant Professors</h3><br>
+<table>
+    <tr>
+        {% for h in hod %}
+        <td>
+            <img src="{{ url_for('static', filename='prof_img/' + h.image_file) }}" style="width: 64px; height: 64px;"><br>
+            {{ h.name }}
+        </td>
+        {% endfor %}
+    </tr>
+</table>
+{% endblock content %}

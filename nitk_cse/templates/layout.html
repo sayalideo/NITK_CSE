@@ -52,13 +52,13 @@
                 <li><a href="#">People<i class="fas fa-angle-down"></i></a>
                     <div class="menu-bar-1">
                         <ul>
-                            <li><a href="#">Faculty</a></li>
-                            <li><a href="#">Adjunct Faculty</a></li>
+                            <li><a href="{{ url_for('faculty') }}">Faculty</a></li>
+                            <!-- <li><a href="#">Adjunct Faculty</a></li>
                             <li><a href="#">Adhoc Faculty</a></li>
                             <li><a href="#">Staff</a></li>
                             <li><a href="#">Project Staff</a></li>
-                            <li><a href="#">Research Scholars</a></li>
-                            <li><a href="#">Students</a></li>
+                            <li><a href="#">Research Scholars</a></li> -->
+                            <li><a href="{{ url_for('student') }}">Students</a></li>
                         </ul>
                     </div>
                 </li>
