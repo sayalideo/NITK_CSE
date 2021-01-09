@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div>
+    <h3>All Consultancies : </h3> <br>
+    <table>
+        <tr>
+            <th>Sr. No.</th>
+            <th>Title of Consultancy</th>
+            <th>Name of the Guide/ Investigator</th>
+            <th>Funding Agency </th>
+            <th>Name of the Student involved</th>
+            <th>Status/ Amt.</th>
+            <th>Year</th>
+        </tr>
+        {% for pr in projects%}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ pr.title }}</td>
+                <td>{{ pr.guide }}</td>
+                <td>{{ pr.agency }}</td>
+                <td>{{ pr.student }}</td>
+                <td>{{ pr.status }}</td>
+                <td>{{ pr.year }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+</div>
+
+{% endblock content %}

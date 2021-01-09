@@ -67,6 +67,16 @@ def issy():
     img = ISSY.query.first().issy_file
     return render_template('issy.html',img=img)
 
+@app.route('/rdproject')
+def rdproject():
+    projects = RDProjects.query.all()
+    return render_template('rdproject.html',projects=projects)
+
+@app.route('/consultancy')
+def conf():
+    projects = Consultancy.query.all()
+    return render_template('conf.html',projects=projects)
+
 @app.route("/login",methods=['GET','POST'])
 def login():
     form = LoginForm()

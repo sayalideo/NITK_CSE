@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h3>R & D Projects :</h3> <br>
+
+{% for proj in projects %}
+    {{ loop.index }} {{ proj.name }}  <br>
+{% endfor %}
+
+{% endblock content %}
