@@ -62,12 +62,12 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">Faculties<i class="fas fa-angle-down"></i></a>
+                <li><a href="{{ url_for('facilities') }}">Facilties<i class="fas fa-angle-down"></i></a>
                     <div class="menu-bar-1">
                         <ul>
-                            <li><a href="#">General Facilities</a></li>
-                            <li><a href="#">Lab Facilities</a></li>
-                            <li><a href="#">Facilities Management</a></li>
+                            <li><a href="{{ url_for('facilities') }}">General Facilities</a></li>
+                            <li><a href="{{ url_for('labfacilities') }}">Lab Facilities</a></li>
+                            <li><a href="{{ url_for('facility_manage') }}">Facilities Management</a></li>
                         </ul>
                     </div>
                 </li>

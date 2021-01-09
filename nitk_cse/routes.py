@@ -16,16 +16,16 @@ def home():
 @app.route("/programmes")
 @app.route("/programmes/undergrad")
 def programmes():
-    return render_template('programmes.html')
+    return render_template('programmes.html',title='Programmes')
 
 @app.route("/programmes/postgrad")
 def postgrad():
-    return render_template('postgrad.html')
+    return render_template('postgrad.html',title='Programmes')
 
 @app.route("/programmes/doctaral")
 def doctaral():
     topics = Research.query.all()
-    return render_template('doctaral.html',topics=topics)
+    return render_template('doctaral.html',topics=topics,title='Programmes')
 
 @app.route("/programmes/doctaral/<id>")
 def subject(id):
@@ -33,7 +33,7 @@ def subject(id):
     faculty = ResearchFaculty.query.filter_by(area_id=id)
     journal = ResearchJournal.query.filter_by(area_id=id)
     conf = ResearchConf.query.filter_by(area_id=id)
-    return render_template('subject.html',subject=subject, faculty=faculty,journal=journal,conf=conf)
+    return render_template('subject.html',subject=subject, faculty=faculty,journal=journal,conf=conf,title='Programmes')
 
 @app.route("/faculty")
 def faculty():
@@ -66,6 +66,19 @@ def isfy():
 def issy():
     img = ISSY.query.first().issy_file
     return render_template('issy.html',img=img)
+
+@app.route("/facilities")
+@app.route("/facilities/general_facilities")
+def facilities():
+    return render_template('facilities.html', title='Facilities')
+
+@app.route("/facilities/lab_facilities")
+def labfacilities():
+    return render_template('lab.html', title='Facilities')
+
+@app.route("/facilities/facility_management")
+def facility_manage():
+    return render_template('facmanage.html', title='Facilities')
 
 @app.route('/rdproject')
 def rdproject():

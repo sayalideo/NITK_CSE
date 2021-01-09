@@ -220,6 +220,40 @@ header .container .bottom nav a:hover{
 .docpage .data a:hover{
     color: darkblue;
 }
+.facpage{
+    padding: 2rem 10rem;
+    height: 1000px;
+}
+.facpage p{
+    margin-top: 1rem;
+}
+.facpage h2{
+    margin-top: 3rem;
+}
+.labpage{
+    padding: 2rem 10rem;
+    height: 1100px;
+}
+.labpage h2{
+    margin-top: 3rem;
+}
+.labpage ul li{
+    margin-top: 2rem;
+}
+.facmanagepage{
+    padding: 2rem 10rem;
+    height: 400px;
+}
+.facmanagepage p{
+    margin-top: 2rem;
+}
+.facmanagepage p a{
+    text-decoration: none;
+    color: darkred;
+}
+.facmanagepage p a:hover{
+    color: darkblue;
+}
 .footer{
     background: #303036;
     color: #ffffff;
