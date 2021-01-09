@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="homepage">
+<div class="about">
+    <h2>About the Department</h2>
+    <hr />
+    <hr />
+    <img src="../static/home.jpg" width="80%" height ="40%" alt="">
+    <p>The Department of Computer Science & Engineering was established in the year 1986. 
+    Since  then, the department has held a position of pride in NITK. It has consistently 
+    fulfilled its role of producing Computer Engineers ready to meet the demands of the IT world.
+    The department has always attracted the best of engineering aspirants from all over the country. 
+    It has a well qualified and experienced team of faculty. The Department offers B.Tech., M.Tech., 
+    M.Tech.(By Research) and Ph.D. courses in Computer Science and Engineering. The department has 
+    adequate facilities to support these teaching activities. Students of the department have access to
+    sufficient high end computing facilities. The Department is also actively involved in various 
+    research activities. The facilities are adequate to cater to the needs of Research activities. 
+    The department has signed MoU with IBM, Intel, Leeds Metropolitan University and others, 
+    for academic collaborative projects.</p>
+    <h3>Vision</h3>
+    <hr />
+    <p class="vision">To facilitate transformation of students into good human beings, responsible 
+    citizens and competent professionals, focusing on assimilation, generation and dissemination of
+    knowledge in the area of Computer Science & Engineering.</p>
+    <h3>Mission</h3>
+    <hr />
+    <ul>
+        <li>Impart quality education to meet the needs of profession and society, and achieve 
+            excellence in teaching-learning and research in the area of Computer Science & Engineering.  </li>
+        <li>Attract and develop talented and committed human resource, and provide an environment 
+            conducive to innovation, creativity, team-spirit and entrepreneurial leadership in Computer 
+            Science & Engineering field.  </li>
+        <li>Facilitate effective interactions among faculty and students of the CSE Department, and 
+            foster networking with alumni, industries, institutions and other stake-holders.</li>
+        <li>Practice and promote high standards of professional ethics, transparency and accountability.</li>
+    </ul>
+</div>
+
+<div class="news">
+    <h3>News and Upcoming Events</h3>
+    {% for new in news %}
+    <a href="{{ new.link }}">{{ new.link_text }}</a>
+    <p>{{ new.news }}</p> <br>
+    {% endfor %}
+</div>
+</div>
+
+{% endblock content %}
