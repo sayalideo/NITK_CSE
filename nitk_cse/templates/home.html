@@ -39,8 +39,8 @@
 <div class="news">
     <h3>News and Upcoming Events</h3>
     {% for new in news %}
-    <a href="{{ new.link }}">{{ new.link_text }}</a>
-    <p>{{ new.news }}</p> <br>
+    <p>{{ new.news }}</p> <a href="{{ new.link }}">{{ new.link_text }}</a>
+    <br>
     {% endfor %}
 </div>
 </div>
