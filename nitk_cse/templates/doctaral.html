@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="docpage">
+    <div class="doc">
+        <h2>Ph. D. (Doctor of Phylosophy)</h2>
+        <hr />
+        <hr />
+        <p>The department has a doctoral programme with an annual intake of 5-10 students per year. 
+            Admission to the doctoral programme is through a rigorous process of test and interview 
+            conducted by the department. The department now accomodated 54 research scholars working on 
+            diverse areas in computer science.</p>
+        
+        <p>Detailed Information and Rules/Regulations about Ph.D. Programme - <a href="">Click Here</a></p>
+    </div>
+
+    <div class="data">
+        <ol>
+            <h4>The active areas of research in the department are:</h4>
+            {% for topic in topics %}
+            <li>
+            <a href="{{ url_for('subject',id=topic.id) }}">{{ topic.title }}</a>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+{% endblock content %}
