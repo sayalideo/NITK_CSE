@@ -108,11 +108,11 @@ def ach_pat():
     return render_template('ach_pat.html', title='Achievements')
 
 @app.route('/placement')
-def placement();
+def placement():
     return render_template('placement.html', title='Placement')
 
 @app.route('/covid-19')
-def covid();
+def covid():
     return render_template('covid.html', title='Covid-19')
 
 @app.route("/login",methods=['GET','POST'])
