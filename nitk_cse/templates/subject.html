@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 {% block content %}
-    <b>{{ subject }}</b><br><br>
-    Faculty : <br>
+    <h2>{{ subject }}</h2><br><br>
+   <b>Faculty : </b> <br>
     {% for f in faculty %}
         {{f.name}} <br>
     {% endfor %}
     <br><br>
-    Journals :  <br>
+    <b> Journals :  </b><br>
     {% for f in journal %}
         {{f.name}} <br>
     {% endfor %}
     <br><br>
-    Conference : <br>
+    <b> Conference : </b><br>
     {% for f in conf %}
         {{f.name}} <br>
     {% endfor %}

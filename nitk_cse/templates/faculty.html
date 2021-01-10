@@ -2,7 +2,7 @@
 {% block content %}
 
 <h3>Professors</h3><br>
-<table>
+<table style="width:50%; padding: 15px; ">
     <tr>
         {% for h in profs %}
         <td>
@@ -14,7 +14,7 @@
 </table>
 <br><br>
 <h3>Head of the Department </h3><br>
-<table>
+<table style="width:80%; padding: 15px; ">
     <tr>
         {% for h in hod %}
         <td>
@@ -26,9 +26,9 @@
 </table>
 <br><br>
 <h3>Associate Professors </h3><br>
-<table>
+<table style="width:50%; padding: 15px; ">
     <tr>
-        {% for h in hod %}
+        {% for h in asso %}
         <td>
             <img src="{{ url_for('static', filename='prof_img/' + h.image_file) }}" style="width: 64px; height: 64px;"><br>
             {{ h.name }}
@@ -38,9 +38,9 @@
 </table>
 <br><br>
 <h3>Assistant Professors</h3><br>
-<table>
+<table style="width:80%; padding: 15px; ">
     <tr>
-        {% for h in hod %}
+        {% for h in assi %}
         <td>
             <img src="{{ url_for('static', filename='prof_img/' + h.image_file) }}" style="width: 64px; height: 64px;"><br>
             {{ h.name }}
