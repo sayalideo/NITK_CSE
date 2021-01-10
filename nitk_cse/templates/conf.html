@@ -1,31 +1,35 @@
 {% extends "layout.html" %}
 {% block content %}
-
-<div>
+<br>
+<div class="container">
     <h3>All Consultancies : </h3> <br>
-    <table>
-        <tr>
-            <th>Sr. No.</th>
-            <th>Title of Consultancy</th>
-            <th>Name of the Guide/ Investigator</th>
-            <th>Funding Agency </th>
-            <th>Name of the Student involved</th>
-            <th>Status/ Amt.</th>
-            <th>Year</th>
-        </tr>
-        {% for pr in projects%}
+    <div class="container">
+        <table border="1" style="padding: 20px; border-spacing: 5px;">
             <tr>
-                <td>{{ loop.index }}</td>
-                <td>{{ pr.title }}</td>
-                <td>{{ pr.guide }}</td>
-                <td>{{ pr.agency }}</td>
-                <td>{{ pr.student }}</td>
-                <td>{{ pr.status }}</td>
-                <td>{{ pr.year }}</td>
+                <th style="padding: 20px; ">Sr. No.</th>
+                <th style="padding: 20px; ">Title of Consultancy</th>
+                <th style="padding: 20px; ">Name of the Guide/ Investigator</th>
+                <th style="padding: 20px; ">Funding Agency </th>
+                <th style="padding: 20px; ">Name of the Student involved</th>
+                <th style="padding: 20px; ">Status/ Amt.</th>
+                <th style="padding: 20px; ">Year</th>
             </tr>
-        {% endfor %}
-    </table>
+            {% for pr in projects%}
+                <tr>
+                    <td style="padding: 20px; ">{{ loop.index }}</td>
+                    <td style="padding: 20px; ">{{ pr.title }}</td>
+                    <td style="padding: 20px; ">{{ pr.guide }}</td>
+                    <td style="padding: 20px; ">{{ pr.agency }}</td>
+                    <td style="padding: 20px; ">{{ pr.student }}</td>
+                    <td style="padding: 20px; ">{{ pr.status }}</td>
+                    <td style="padding: 20px; ">{{ pr.year }}</td>
+                </tr>
+                
+            {% endfor %}
+        </table>
     
+    </div>
+  <br>  
 </div>
 
 {% endblock content %}

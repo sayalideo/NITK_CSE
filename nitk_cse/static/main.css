@@ -96,6 +96,8 @@ header .container .bottom nav a{
 header .container .bottom nav a:hover{
     color: #7FFFD4;
 }
+
+
 .homepage{
     display: flex;
     padding: 0 5rem;
@@ -419,3 +421,6 @@ header .container .bottom nav a:hover{
 .footer .footer-last .goto h6 a:hover{
     color: aquamarine;
 }
+
+
+
