@@ -99,15 +99,15 @@
                                     
                                     
                                     <div class="dropdown show">
-                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="btn btn-secondary dropdown-toggle" href="{{ url_for('ach_dep') }}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Achievements
                                           </a>
                                     <!-- <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a> -->
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item" href="#">Department</a>
-                                            <a class="dropdown-item" href="#">Faculty</a>
-                                            <a class="dropdown-item" href="#">Students</a>
-                                            <a class="dropdown-item" href="#">Patents</a>
+                                            <a class="dropdown-item" href="{{ url_for('ach_dep') }}">Department</a>
+                                            <a class="dropdown-item" href="{{ url_for('ach_fac') }}">Faculty</a>
+                                            <a class="dropdown-item" href="{{ url_for('ach_stu') }}">Students</a>
+                                            <a class="dropdown-item" href="{{ url_for('ach_pat') }}">Patents</a>
                                           </div>
                                         </div> 
                                         
