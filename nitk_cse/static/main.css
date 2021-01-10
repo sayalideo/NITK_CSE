@@ -334,3 +334,8 @@ header .container .bottom nav a:hover{
 .footer .footer-bottom ul li a:hover{
     color: #7FFFD4;
 }
+.placement-heading p {
+    padding: 3rem 10rem;
+    height: 1300px;
+
+}

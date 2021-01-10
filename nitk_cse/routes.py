@@ -306,3 +306,13 @@ def add_consultancy():
         db.session.commit()
         return redirect(url_for('add_consultancy'))
     return render_template('addConsultancy.html',form=form,p=p)
+
+
+
+@app.route("/placement")
+def placement():
+    return render_template('placement.html')
+
+@app.route("/covid")
+def covid():
+    return render_template('covid.html')

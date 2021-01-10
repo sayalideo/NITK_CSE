@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <script src="https://kit.fontawesome.com/8b5e0cd93a.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='icon.png')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" type="text/css"> 
     {% if title %}
         <title>{{ title }} | Computer Science and Engineering</title>
@@ -30,83 +34,105 @@
             </div>
             <div class="middle">
               <ul class="menu">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a>
-                    <div class="menu-bar-1">
-                        <ul>
-                            <li><a href="{{ url_for('programmes') }}">Undergraduate</a></li>
-                            <li><a href="{{ url_for('postgrad') }}">Postgraduate</a></li>
-                            <li><a href="{{ url_for('doctaral') }}">Doctoral</a></li>
-                        </ul>
+                
+                <!-- <li><a href="{{ url_for('home') }}">Home</a></li> -->
+                <a class="btn btn-secondary" href="{{ url_for('home') }}" role="button"   aria-haspopup="true" aria-expanded="false">
+                    Home
+                  </a>
+                    <div class="dropdown show">   
+                    <a class="btn btn-secondary dropdown-toggle" href="{{ url_for('programmes') }}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Programmes
+                      </a>
+                <!-- <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a> -->
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url_for('programmes') }}">Undergraduate</a>
+                        <a class="dropdown-item" href="{{ url_for('postgrad') }}">Postgraduate</a>
+                        <a class="dropdown-item" href="{{ url_for('doctaral') }}">Doctoral</a>
+                      </div>
                     </div>
-                </li>
-                <li><a href="#">Courses<i class="fas fa-angle-down"></i></a>
-                    <div class="menu-bar-1">
-                        <ul>
-                            <li><a href="#">Undergraduate</a></li>
-                            <li><a href="#">Postgraduate</a></li>
-                            <li><a href="#">Doctoral</a></li>
-                        </ul>
-                    </div>    
-                </li>
-                <li><a href="#">People<i class="fas fa-angle-down"></i></a>
-                    <div class="menu-bar-1">
-                        <ul>
-                            <li><a href="{{ url_for('faculty') }}">Faculty</a></li>
-                            <!-- <li><a href="#">Adjunct Faculty</a></li>
-                            <li><a href="#">Adhoc Faculty</a></li>
-                            <li><a href="#">Staff</a></li>
-                            <li><a href="#">Project Staff</a></li>
-                            <li><a href="#">Research Scholars</a></li> -->
-                            <li><a href="{{ url_for('student') }}">Students</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="{{ url_for('facilities') }}">Facilties<i class="fas fa-angle-down"></i></a>
-                    <div class="menu-bar-1">
-                        <ul>
-                            <li><a href="{{ url_for('facilities') }}">General Facilities</a></li>
-                            <li><a href="{{ url_for('labfacilities') }}">Lab Facilities</a></li>
-                            <li><a href="{{ url_for('facility_manage') }}">Facilities Management</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">Research/Consultancy<i class="fas fa-angle-down"></i></a>
-                    <div class="menu-bar-1">
-                        <ul>
-                            <li><a href="{{ url_for('rdproject')}}">R & D Projects</a></li>
-                            <li><a href="{{ url_for('conf')}}">Consultancy</a></li>
-                            <li><a href="#">MoU</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">Achievements<i class="fas fa-angle-down"></i></a>
-                    <div class="menu-bar-1">
-                        <ul>
-                            <li><a href="#">Department</a></li>
-                            <li><a href="#">Faculty</a></li>
-                            <li><a href="#">Students</a></li>
-                            <li><a href="#">Patents</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">Placements</a></li>
-                <li><a href="#">Events<i class="fas fa-angle-down"></i></a>
-                    <div class="menu-bar-1">
-                        <ul>
-                            <li><a href="#">Workshops</a></li>
-                            <li><a href="#">Conferences</a></li>
-                            <li><a href="#">News</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">Contact</a></li>
+
+                    <!-- <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="{{ url_for('programmes') }}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Courses
+                          </a>
+                    <!-- <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a> -->
+                        <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{ url_for('programmes') }}">Undergraduate</a>
+                            <a class="dropdown-item" href="{{ url_for('postgrad') }}">Postgraduate</a>
+                            <a class="dropdown-item" href="{{ url_for('doctaral') }}">Doctoral</a>
+                          </div>
+                        </div>  -->
+
+                        <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                People
+                              </a>
+                        <!-- <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a> -->
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="{{ url_for('faculty') }}">Faculty</a>
+                                <a class="dropdown-item" href="{{ url_for('student') }}">Students</a>
+                              </div>
+                            </div>
+
+                            <div class="dropdown show">
+                                <a class="btn btn-secondary dropdown-toggle" href="{{ url_for('facilities') }}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Facilities
+                                  </a>
+                            <!-- <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a> -->
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ url_for('facilities') }}">General Facilities</a>
+                                    <a class="dropdown-item" href="{{ url_for('labfacilities') }}">Lab Facilities</a>
+                                    <a class="dropdown-item" href="{{ url_for('facility_manage') }}">Facilities Management</a>
+                                  </div>
+                                </div>    
+
+                                <div class="dropdown show">
+                                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Research/Consultancy
+                                      </a>
+                                <!-- <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a> -->
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="{{ url_for('rdproject')}}">R & D Projects</a>
+                                        <a class="dropdown-item" href="{{ url_for('conf')}}">Consultancy</a>
+                                      </div>
+                                    </div> 
+                                    
+                                    
+                                    <div class="dropdown show">
+                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Achievements
+                                          </a>
+                                    <!-- <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a> -->
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Department</a>
+                                            <a class="dropdown-item" href="#">Faculty</a>
+                                            <a class="dropdown-item" href="#">Students</a>
+                                            <a class="dropdown-item" href="#">Patents</a>
+                                          </div>
+                                        </div> 
+                                        
+                                        <a class="btn btn-secondary" href="{{ url_for('placement')}}" role="button"   aria-haspopup="true" aria-expanded="false">
+                                            Placements
+                                          </a>
+                                        <div class="dropdown show">
+                                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Events
+                                              </a>
+                                        <!-- <li><a href="{{ url_for('programmes') }}">Programmes<i class="fas fa-angle-down"></i></a> -->
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a class="dropdown-item" href="#">Workshops</a>
+                                                <a class="dropdown-item" href="#">Conferences</a>
+                                                <a class="dropdown-item" href="#">News</a>
+                                              </div>
+                                            </div> 
+
+                                            <a class="btn btn-secondary" href="{{ url_for('covid')}}" role="button"   aria-haspopup="true" aria-expanded="false">
+                                                COVID-19 Research
+                                              </a>   
+
+                
+                </div>
               </ul>
-            </div>
-            <div class="bottom">
-              <nav>
-                <a href="#">COVID-19 Research</a>
-              </nav>
             </div>
         </div>
     </header>
