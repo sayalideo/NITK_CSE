@@ -255,6 +255,65 @@ header .container .bottom nav a:hover{
 .facmanagepage p a:hover{
     color: darkblue;
 }
+.rdpage{
+    padding: 2rem 10rem;
+    height: 400px;
+}
+.rdpage h2{
+    margin-top: 3rem;
+}
+.confpage{
+    padding: 2rem 10rem;
+    height: 400px;
+}
+.confpage h2{
+    margin-top: 3rem;
+}
+.achdeppage{
+    padding: 2rem 10rem;
+    height: 900px;
+}
+.achdeppage ul li{
+    margin-top: 2rem;
+} 
+.achdeppage ol li{
+    margin-top: 2rem;
+}
+.achdeppage a{
+    text-decoration: none;
+    color: darkred;
+}
+.achdeppage a:hover{
+    color: darkblue;
+}
+.achfacpage{
+    padding: 3rem 10rem;
+    height: 1300px;
+}
+.achfacpage li{
+    margin-top: 1rem;
+}
+.achfacpage a{
+    text-decoration: none;
+    color: darkred;
+}
+.achfacpage a:hover{
+    color: darkblue;
+}
+.achpatpage{
+    padding: 3rem 10rem;
+    height: 800px;
+}
+.achpatpage li{
+    margin-top: 1rem;
+}
+.achstupage{
+    padding: 3rem 10rem;
+    height: 1200px;
+}
+.achstupage li{
+    margin-top: 1rem;
+}
 .footer{
     background: #303036;
     color: #ffffff;
