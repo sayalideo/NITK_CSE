@@ -126,7 +126,7 @@ header .container .bottom nav a:hover{
 }
 .progpage{
     padding: 2rem 10rem;
-    height: 1250px;
+    height: 1258px;
 }
 .progpage h2{
     margin-top: 3rem;
@@ -334,8 +334,4 @@ header .container .bottom nav a:hover{
 .footer .footer-bottom ul li a:hover{
     color: #7FFFD4;
 }
-.placement-heading p {
-    padding: 3rem 10rem;
-    height: 1300px;
 
-}
