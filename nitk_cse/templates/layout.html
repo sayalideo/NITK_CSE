@@ -222,6 +222,18 @@
                 </ul>
             </div>
         </div>
+        <div class="footer-last">
+            <div class="here">
+            <h6>{% if title %}
+                You are here <i class="fas fa-angle-double-right"></i> {{ title }}
+            {% else %}
+                You are here <i class="fas fa-angle-double-right"></i> Home
+            {% endif %} </h6>
+            </div>
+            <div class="goto">
+                <h6>Go to <i class="fas fa-angle-double-right"></i> <a href="{{ url_for('home') }}">Home</a></h6>
+            </div>
+        </div>
     </div>
 </body>
 </html>
