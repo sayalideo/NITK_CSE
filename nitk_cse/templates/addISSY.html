@@ -22,3 +22,6 @@
 {% if p %}
 <img src="{{ url_for('static', filename='stud_list/' + p.issy_file) }}" style="width: 512px; height: 720px;" alt="">
 {% endif %}
+
+<br><br>
+<button><a href="{{ url_for('admin') }}"><< Admin Dashboard</a> </button>
